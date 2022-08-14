@@ -7,7 +7,7 @@ const galleryEl = document.querySelector(".gallery");
 // console.log(galleryEl);
 
 const markup = galleryItems
-  // event.preventDefault();
+
   .map(
     (galleryItem) =>
       `<div class="gallery__item">
@@ -26,7 +26,24 @@ const markup = galleryItems
 galleryEl.insertAdjacentHTML("beforeend", markup);
 
 // ===============================================================================================
-const galleryItemEl = document.querySelectorAll(".gallery__item");
+const galleryItemEl = document.querySelector(".gallery__item");
 console.log(galleryItemEl);
+// const galleryLinkEl = galleryItemEl.children.join("");
+// console.log(galleryLinkEl);
+
+galleryItemEl.addEventListener("click", (event) => {
+  //   const color = getRandomHexColor();
+  //   bodyEl.style.backgroundColor = color;
+  //   colorEl.textContent = color;
+  event.preventDefault();
+  galleryItemEl.add.classList = "modal";
+});
+
 // galleryItemEl
 // galleryItemEl.forEach((item) => item.preventDefault());
+
+// function onFormSubmit(event) {
+//     event.preventDefault();
+
+//     const emailValue = event.currentTarget.elements.email.value;
+//     const passwordValue = event.currentTarget.elements.password.value;

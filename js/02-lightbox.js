@@ -10,7 +10,7 @@ const markup = galleryItems
   .map(
     (galleryItem) =>
       `<a class="gallery__item" href="${galleryItem.original}">
-            <img class="gallery__image" src="${galleryItem.preview}" alt="${galleryItem.description}" /> />
+            <img class="gallery__image" src="${galleryItem.preview}" alt="${galleryItem.description}" />
         </a>`
   )
   .join("");

@@ -4,7 +4,6 @@ import { galleryItems } from "./gallery-items.js";
 // console.log(galleryItems);
 
 const galleryEl = document.querySelector(".gallery");
-// console.log(galleryEl);
 
 const markup = galleryItems
 
@@ -26,24 +25,16 @@ const markup = galleryItems
 galleryEl.insertAdjacentHTML("beforeend", markup);
 
 // ===============================================================================================
-const galleryItemEl = document.querySelector(".gallery__item");
-console.log(galleryItemEl);
-// const galleryLinkEl = galleryItemEl.children.join("");
-// console.log(galleryLinkEl);
 
-galleryItemEl.addEventListener("click", (event) => {
-  //   const color = getRandomHexColor();
-  //   bodyEl.style.backgroundColor = color;
-  //   colorEl.textContent = color;
-  event.preventDefault();
-  galleryItemEl.add.classList = "modal";
-});
+galleryEl.addEventListener("click", onClick);
 
-// galleryItemEl
-// galleryItemEl.forEach((item) => item.preventDefault());
+function onClick(evt) {
+  evt.preventDefault();
 
-// function onFormSubmit(event) {
-//     event.preventDefault();
+  const originalPhotoHref = evt.target.dataset.source;
+  const instance = basicLightbox.create(`
+    <img src="${originalPhotoHref}" width="800" height="600">
+`);
 
-//     const emailValue = event.currentTarget.elements.email.value;
-//     const passwordValue = event.currentTarget.elements.password.value;
+  instance.show();
+}

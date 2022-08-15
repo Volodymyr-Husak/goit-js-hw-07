@@ -24,7 +24,7 @@ const markup = galleryItems
 
 galleryEl.insertAdjacentHTML("beforeend", markup);
 
-// ===============================================================================================
+// =====================================Click==========================================================
 
 galleryEl.addEventListener("click", onClick);
 
@@ -37,4 +37,16 @@ function onClick(evt) {
 `);
 
   instance.show();
+}
+
+// ========================Escape============================================
+
+document.addEventListener("keydown", onEscRemoveLightbox);
+
+function onEscRemoveLightbox(event) {
+  const basicLightboxEl = document.querySelector(".basicLightbox");
+
+  if (basicLightboxEl && event.key === "Escape") {
+    basicLightboxEl.remove();
+  } else return;
 }

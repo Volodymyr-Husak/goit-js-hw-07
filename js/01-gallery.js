@@ -120,6 +120,7 @@ function onClick(evt) {
     if (event.key === "Escape") {
       // instance.close(() => console.log("lightbox більше не видно"));
       instance.close();
+      document.removeEventListener("keydown", onEscRemoveLightbox);
     } else return;
   }
 }
